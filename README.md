@@ -7,6 +7,7 @@ This guide explains how to set up a Virtual Private Cloud (VPC) in AWS with one 
 You will also create a route table, attach an Internet Gateway, and verify that the public subnet has internet access.
 
 
+
 🧱 Step 1: Create a VPC
 
 Create a new VPC with a CIDR block like 10.0.0.0/16.
@@ -14,6 +15,7 @@ Create a new VPC with a CIDR block like 10.0.0.0/16.
 This is your main network where all subnets and resources will exist.
 
 Give it a name, for example MyVPC.
+
 
 
 🌐 Step 2: Create Subnets
@@ -31,6 +33,7 @@ The public subnet will have access to the internet, and the private subnet will 
 
 
 
+
 🌉 Step 3: Create an Internet Gateway
 
 Create an Internet Gateway (IGW).
@@ -40,6 +43,7 @@ Attach it to your VPC.
 This allows your VPC to communicate with the internet.
 
 Name it something like MyIGW
+
 
 
 
@@ -55,6 +59,7 @@ Name it PublicRouteTable.
 
 
 
+
 🔗 Step 5: Associate the Route Table
 
 Link (associate) your Public Route Table with the Public Subnet.
@@ -63,11 +68,13 @@ This means all traffic from that subnet will use the route table that connects t
 
 
 
+
 ⚙️ Step 6: Enable Public IP
 
 Enable the option “Auto-assign Public IP” for the public subnet.
 
 This ensures that any EC2 instance launched in that subnet automatically gets a public IP.
+
 
 
 
@@ -81,6 +88,7 @@ Make sure the security group allows SSH (port 22) and outbound internet access.
 
 
 
+
 🌐 Step 8: Verify Internet Access
 
 Connect to your EC2 instance using SSH from your computer.
@@ -88,6 +96,7 @@ Connect to your EC2 instance using SSH from your computer.
 Once connected, try opening a website or pinging a public address like google.com.
 
 If it works, your internet setup is successful!
+
 
 
 
@@ -102,6 +111,8 @@ Internet Gateway	MyIGW	Connects VPC to the internet
 Route Table	PublicRouteTable	Routes internet traffic via IGW
 
 
+
+
 💡 Notes
 
 The public subnet can connect to the internet directly.
@@ -109,6 +120,9 @@ The public subnet can connect to the internet directly.
 The private subnet is used for internal resources that do not need direct internet access.
 
 To give private subnet internet access, you can later set up a NAT Gateway (optional).
+
+
+
 
 Author
 created by: Ashwini G Rathod
