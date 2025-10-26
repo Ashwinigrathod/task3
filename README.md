@@ -1,4 +1,3 @@
-# task3
 AWS VPC Setup (Public and Private Subnets)
 
 📘 Overview
@@ -7,6 +6,7 @@ This guide explains how to set up a Virtual Private Cloud (VPC) in AWS with one 
 You will also create a route table, attach an Internet Gateway, and verify that the public subnet has internet access.
 
 
+---
 
 🧱 Step 1: Create a VPC
 
@@ -17,6 +17,8 @@ This is your main network where all subnets and resources will exist.
 Give it a name, for example MyVPC.
 
 
+
+---
 
 🌐 Step 2: Create Subnets
 
@@ -33,6 +35,7 @@ The public subnet will have access to the internet, and the private subnet will 
 
 
 
+---
 
 🌉 Step 3: Create an Internet Gateway
 
@@ -42,10 +45,11 @@ Attach it to your VPC.
 
 This allows your VPC to communicate with the internet.
 
-Name it something like MyIGW
+Name it something like MyIGW.
 
 
 
+---
 
 🗺️ Step 4: Create a Route Table
 
@@ -59,6 +63,7 @@ Name it PublicRouteTable.
 
 
 
+---
 
 🔗 Step 5: Associate the Route Table
 
@@ -68,6 +73,7 @@ This means all traffic from that subnet will use the route table that connects t
 
 
 
+---
 
 ⚙️ Step 6: Enable Public IP
 
@@ -77,6 +83,7 @@ This ensures that any EC2 instance launched in that subnet automatically gets a 
 
 
 
+---
 
 🖥️ Step 7: Launch an EC2 Instance
 
@@ -88,6 +95,7 @@ Make sure the security group allows SSH (port 22) and outbound internet access.
 
 
 
+---
 
 🌐 Step 8: Verify Internet Access
 
@@ -99,6 +107,7 @@ If it works, your internet setup is successful!
 
 
 
+---
 
 🧾 Summary
 
@@ -112,6 +121,7 @@ Route Table	PublicRouteTable	Routes internet traffic via IGW
 
 
 
+---
 
 💡 Notes
 
